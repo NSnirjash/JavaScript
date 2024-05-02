@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let computerGuess = parseInt(Math.random() * 100 + 1)
+        let attempt = 1
+
+        while (attempt <= 3) {
+            let userGuess = prompt("Enter your number");
+
+
+            if (computerGuess == userGuess) {
+                document.write("Congrates You guess the right number");
+                break;
+            }
+
+            else if (computerGuess < userGuess) {
+                alert("You guess the lerge number")
+                attempt++
+
+            }
+
+            else if (computerGuess > userGuess) {
+                alert("You guess the small number")
+                attempt++
+            }
+
+            if (attempt == 3) {
+                document.write("Sorry, You losse the game <br>")
+                document.write("Better luck next time <br>")
+                document.write("The number was: " + computerGuess)
+            }
+        }
+    </script>
+</body>
+
+</html>

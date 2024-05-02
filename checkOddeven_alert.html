@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Number</label>
+    <input type="number" id="number"><br>
+    <input type="submit" value="Check your number" onclick="checkOddEven()">
+
+    <script>
+
+        function checkOddEven(){
+
+            let userinput=document.getElementById("number").value;
+
+            if(userinput%2==0){
+                alert(userinput+" Is an Even number");
+            }
+            else{
+                alert(userinput+" Is an odd Number");
+            }
+        }
+
+    </script>
+</body>
+</html>

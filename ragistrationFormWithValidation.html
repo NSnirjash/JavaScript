@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Onnile Form</legend>
+        <form action="" id="nir">
+            <label for="">Name</label> <br>
+            <input type="text" id="name"><br>
+            <label for="">Email</label><br>
+            <input type="text" id="email"><br>
+            <label for="">Password</label><br>
+            <input type="password" name="" id="password"><br>
+            <label for="">Sex</label><br>
+            <input type="radio" name="sex" value="Male" id="male">Male
+            <input type="radio" name="sex" value="Female" id="female">Female
+            <input type="radio" name="sex" value="Other" id="other">Other <br>
+            <label for="">Course</label><br>
+            <input type="checkbox" name="course" value="NT" id="nt">NT
+            <input type="checkbox" name="course" value="IAD" id="iad">IAD
+            <input type="checkbox" name="course" value="DDD" id="ddd">DDD
+            <input type="checkbox" name="course" value="ESAD" id="esad">ESAD <br>
+            <label for="">Location</label><br>
+            <select name="location" id="location">
+                <option selected>Select One...</option>
+                <option value="Banani">Banani</option>
+                <option value="Mirpur">Mirpur</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
+    </fieldset>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault()
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let sex = document.querySelector('input[name="sex"]:checked').value;
+            let course = document.querySelectorAll('input[name="course"]:checked')
+            let location = document.getElementById("location").value;
+
+
+
+            let courseArray = [];
+
+            for (let i = 0; i < course.length; i++) {
+                courseArray.push(course[i].value);
+            }
+
+            //Start Validation
+
+
+            //End Validation
+
+
+
+            let output = "Name: " + name + "\n";
+            output += "Email: " + email + "\n";
+            output += "password: " + password + "\n";
+            output += "Sex: " + sex + "\n";
+            output += "Course: " + courseArray + "\n";
+            output += "Location: " + location + "\n";
+
+
+            let newWindow = window.open("", "_blank");
+            newWindow.document.write("<pre>" + output + "</pre>");
+        }
+        let myForm = document.getElementById("nir");
+        myForm.addEventListener("submit", submitForm);
+    </script>
+</body>
+
+</html>

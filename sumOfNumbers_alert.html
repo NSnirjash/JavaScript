@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="">Number 1</label>
+    <input type="number" name="" id="number1"><br>
+    <label for="">Number 2</label>
+    <input type="number" name="" id="number2"><br>
+    <input type="submit" value="Show the Sum" onclick="doSum()">
+    <script>
+
+        function doSum() {
+            let num1 = document.getElementById("number1").value;
+            let num2 = document.getElementById("number2").value;
+
+            let num1ToInt = parseFloat(num1);
+            let num2ToInt = parseFloat(num2);
+            let result = num1ToInt + num2ToInt
+
+            alert("Sum of numbers is: "+result);
+
+        }
+
+    </script>
+    
+</body>
+</html>

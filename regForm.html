@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="myForm">
+        <label for="">Name</label><br>
+        <input type="text" id="name"> <br>
+        <label for="">Email</label><br>
+        <input type="email" id="email"> <br>
+        <label for="">Password</label><br>
+        <input type="password" name="" id="password"><br>
+        <label for="">Gender</label><br>
+        <input type="radio" name="gender" value="Male" id="male">Male
+        <input type="radio" name="gender" value="Female" id="female">Female
+        <input type="radio" name="gender" value="Other" id="other">Other <br>
+        <label for="">Hobby</label><br>
+        <input type="checkbox" name="hobby" value="Coding">Coding
+        <input type="checkbox" name="hobby" value="Fishing">Fishing
+        <input type="checkbox" name="hobby" value="Gardening">Gardening
+        <input type="checkbox" name="hobby" value="Reading">Reading
+        <input type="checkbox" name="hobby" value="Drawing">Drawing <br>
+        <label for="">Round</label><br>
+        <select name="round" id="round">
+            <option value="54">54</option>
+            <option value="55">55</option>
+            <option value="56">56</option>
+            <option value="57">57</option>
+            <option value="58">58</option>
+        </select><br>
+        <label for="">Comment</label><br>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="submit" id="submit">
+    </form>
+
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+            let gender=document.querySelector('input[name="gender"]:checked').value;
+            let hobby=document.querySelectorAll('input[name="hobby"]:checked');
+            let round=document.getElementById("round").value;
+            let comment=document.getElementById("comment").value;
+
+
+            let hobbyValue=[];
+            for(let i=0; i<hobby.length; i++){
+                hobbyValue.push(hobby[i].value);
+            }
+
+
+
+            let output = "Name: " + name + "\n";
+            output+="Email: "+email+"\n";
+            output+="Password: "+password+"\n";
+            output+="Gender: "+gender+"\n"
+            output+="Hobby: "+hobbyValue+"\n";
+            output+="Round: "+round+"\n";
+            output+="Comment: "+comment+"\n";
+
+            let newWindow = window.open("", "_blank");
+            newWindow.document.write("<pre>" + output + "</pre>");
+        }
+        let myForm = document.getElementById("myForm");
+        myForm.addEventListener("submit", submitForm);
+    </script>
+</body>
+
+</html>
